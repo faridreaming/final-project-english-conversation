@@ -2,12 +2,17 @@
 
 :root {
   --color-1: #03045e;
-  --color-2: #0077b6;
-  --color-3: #00b4d8;
+  --color-1-75: rgba(3, 5, 94, 0.75);
+  --color-1-50: rgba(3, 5, 94, 0.5);
+  --color-2: hsl(201, 100%, 36%);
+  --color-2-darker: hsl(201, 100%, 31%);
+  --color-3: hsl(190, 100%, 42%);
+  --color-3-darker: hsl(191, 100%, 37%);
   --color-4: #90e0ef;
   --color-5: #caf0f8;
   --basic-border-radius: 0.5rem;
   --basic-font-bold: 500;
+  --basic-transition: all 0.125s ease;
 }
 
 * {
@@ -17,13 +22,26 @@
 }
 
 body {
+  color: var(--color-1);
+}
+
+body#index {
   height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 body,
 button,
 input {
   font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+input::placeholder {
+  color: var(--color-1-50);
+  text-align: center;
 }
 
 a {
@@ -56,7 +74,7 @@ header {
 
 .logo p {
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: var(--basic-font-bold);
 }
 
 /* Main */
@@ -77,18 +95,17 @@ main .container {
   width: 25rem;
 }
 
-.hero-wrapper p {
-  font-size: 1.5rem;
-  font-weight: var(--basic-font-bold);
-}
-
 .name-form {
   display: flex;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
-  gap: 0.25rem;
   flex-direction: column;
-  padding: 1rem;
+}
+
+.name-form p {
+  font-size: 1.5rem;
+  font-weight: var(--basic-font-bold);
 }
 
 .name-form input,
@@ -98,13 +115,40 @@ main .container {
   outline: none;
   padding: 0.5rem;
   font-size: 1rem;
-  border-radius: var(--basic-border-radius);
+  transition: var(--basic-transition);
+}
+
+.name-form input {
+  color: var(--color-1-75);
 }
 
 .name-form button {
+  outline: 0.25rem solid transparent;
   background-color: var(--color-3);
+  border-radius: var(--basic-border-radius);
   color: #fff;
   cursor: pointer;
   font-weight: var(--basic-font-bold);
-  box-shadow: 0 0.25rem 0 var(--color-2);
+  border-bottom: 0.25rem solid var(--color-2);
+}
+
+.name-form button:focus {
+  outline-color: var(--color-4);
+}
+
+.name-form button:hover,
+.name-form button:focus {
+  background-color: var(--color-3-darker);
+  border-color: var(--color-2-darker);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--color-1-75);
+}
+
+footer a {
+  color: inherit;
+  font-weight: var(--basic-font-bold);
 }

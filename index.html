@@ -11,13 +11,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
   <link rel="manifest" href="assets/favicons/site.webmanifest">
-  <script>
-    const playerName = localStorage.getItem("playerName");
-    if (playerName) window.location.href = "game.html";
-  </script>
 </head>
 
-<body id="index">
+<body>
   <header>
     <div class="container">
       <a href="./" class="logo">
@@ -46,7 +42,7 @@
   </footer>
   <div class="popup-overlay">
     <div class="popup">
-      <p>Your name is <span class="name-span"></span>. Are you sure?</p>
+      <p>Your name is <span class="player-name-span"></span>. Are you sure?</p>
       <div class="popup-button-wrapper">
         <button class="yes">Yes</button>
         <button class="no">No</button>

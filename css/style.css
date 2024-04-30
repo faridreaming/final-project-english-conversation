@@ -34,13 +34,6 @@ body {
   color: var(--color-1);
 }
 
-body#index {
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 body,
 button,
 input {
@@ -67,11 +60,18 @@ a {
 header {
   background-color: var(--color-2);
   box-shadow: 0 0.25rem 0 var(--color-4);
+  color: #fff;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   display: flex;
-  justify-content: center;
+  width: fit-content;
   align-items: center;
   gap: 0.5rem;
   color: #fff;
@@ -87,11 +87,6 @@ header {
 }
 
 /* Main */
-main .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
 .hero-wrapper {
   display: flex;
   justify-content: center;
@@ -118,7 +113,7 @@ main .container {
 }
 
 .name-form input,
-.name-form button {
+button {
   width: 100%;
   border: none;
   outline: none;
@@ -131,7 +126,7 @@ main .container {
   color: var(--color-1-75);
 }
 
-.name-form button {
+button {
   outline: 0.25rem solid transparent;
   background-color: var(--color-3);
   border-radius: var(--basic-border-radius);
@@ -141,14 +136,18 @@ main .container {
   border-bottom: 0.25rem solid var(--color-2);
 }
 
-.name-form button:focus {
+button:focus {
   outline-color: var(--color-4);
 }
 
-.name-form button:hover,
-.name-form button:focus {
+button:hover,
+button:focus {
   background-color: var(--color-3-darker);
   border-color: var(--color-2-darker);
+}
+
+.player-name-span {
+  font-weight: var(--basic-font-bold);
 }
 
 /* Footer */

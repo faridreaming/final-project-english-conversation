@@ -1,7 +1,10 @@
+const playerName = localStorage.getItem("playerName");
+if (playerName) window.location.href = "./game/";
+
 const nameForm = document.querySelector(".name-form");
 const popupOverlay = document.querySelector(".popup-overlay");
 const popup = popupOverlay.querySelector(".popup");
-const nameSpan = popup.querySelector(".name-span");
+const playerNameSpan = popup.querySelector(".player-name-span");
 const yesButton = popup.querySelector(".yes");
 const noButton = popup.querySelector(".no");
 
@@ -15,8 +18,8 @@ nameForm.addEventListener("submit", (event) => {
     }
   });
 
-  nameSpan.focus();
-  nameSpan.textContent = playerName;
+  playerNameSpan.focus();
+  playerNameSpan.textContent = playerName;
   showPopup();
   noButton.addEventListener("click", closePopup);
   yesButton.addEventListener("click", startGame);
@@ -48,6 +51,6 @@ function closePopup() {
 }
 
 function startGame() {
-  localStorage.setItem("playerName", nameSpan.textContent);
-  window.location.href = "game.html";
+  localStorage.setItem("playerName", playerNameSpan.textContent);
+  window.location.href = "./game/";
 }

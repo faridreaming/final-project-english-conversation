@@ -15,16 +15,42 @@ menuButton.addEventListener("click", toggleMenu);
 // Change Name
 const popupOverlay = document.querySelector(".popup-overlay");
 const popup = popupOverlay.querySelector(".popup");
-const yesButton = popup.querySelector(".yes");
-const noButton = popup.querySelector(".no");
 const changeNameButton = document.querySelector(".change-name-button");
+const changeNameForm = document.querySelector(".change-name");
+const newNameInput = changeNameForm.querySelector("input");
+const noButton = popup.querySelector(".no");
+
 changeNameButton.addEventListener("click", showPopup);
-noButton.addEventListener("click", () => {
+newNameInput.value = playerName;
+
+changeNameForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  changeName();
+});
+
+noButton.addEventListener("click", (event) => {
+  event.preventDefault();
   closePopup();
-  showToast("Name change cancelled");
+  showToast("Name change cancelled", "fail");
+  setTimeout(() => {
+    newNameInput.value = playerName;
+  }, 125);
 });
 
 // Functions
+function changeName() {
+  const newName = newNameInput.value;
+  if (newName === playerName) {
+    showToast("Name change cancelled", "fail");
+    closePopup();
+    return;
+  }
+  localStorage.setItem("playerName", newName);
+  playerNameSpan.textContent = newName;
+  showToast("Name changed successfully", "success");
+  closePopup();
+}
+
 function showPopup() {
   popupOverlay.style.display = "flex";
   setTimeout(() => {
@@ -87,12 +113,16 @@ function closeOptions() {
 }
 
 let toastTimeout;
-function showToast(message) {
+function showToast(message, type) {
   const toast = document.getElementById("toast");
   toast.innerText = message;
   toast.classList.add("show");
+  toast.classList.add(type);
   if (toastTimeout) clearTimeout(toastTimeout);
   toastTimeout = setTimeout(() => {
     toast.classList.remove("show");
+    setTimeout(() => {
+      toast.classList.remove(type);
+    }, 500);
   }, 1500);
 }

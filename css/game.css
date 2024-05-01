@@ -4,6 +4,11 @@
 .hamburger-menu-button {
   user-select: none;
   cursor: pointer;
+  transition: var(--basic-transition);
+}
+
+.hamburger-menu-button:hover {
+  color: aqua;
 }
 
 .container.options-wrapper {
@@ -63,4 +68,10 @@
 
 .button-wrapper button.restart-progress-button:focus {
   outline-color: var(--color-6-reverse);
+}
+
+input.new-name-input {
+  /* background-color: var(--color-5); */
+  border-radius: var(--basic-border-radius);
+  /* border: 0.15rem solid var(--color-5); */
 }

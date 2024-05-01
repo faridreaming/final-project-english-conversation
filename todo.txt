@@ -1,2 +1,2 @@
-* fixing padding in options container
+* fixing padding in options container ✅
 * creating change name function

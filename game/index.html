@@ -48,11 +48,13 @@
   <div class="popup-overlay">
     <div class="popup">
       <p>Please enter your new name</p>
-      <input type="text" class="new-name-input" placeholder="Your name">
-      <div class="popup-button-wrapper">
-        <button class="yes">Confirm</button>
-        <button class="no">Cancel</button>
-      </div>
+      <form class="change-name">
+        <input type="text" placeholder="Your name">
+        <div class="popup-button-wrapper">
+          <button class="yes" type="submit">Confirm</button>
+          <button class="no" type="reset">Cancel</button>
+        </div>
+      </form>
     </div>
   </div>
   <div id="toast" class="toast"></div>

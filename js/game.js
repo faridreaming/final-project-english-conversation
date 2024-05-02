@@ -1,4 +1,4 @@
-const playerName = localStorage.getItem("playerName");
+let playerName = localStorage.getItem("playerName");
 if (!playerName) window.location.href = "../";
 
 // Display Player Name
@@ -19,6 +19,7 @@ const changeNameButton = document.querySelector(".change-name-button");
 const changeNameForm = document.querySelector(".change-name");
 const newNameInput = changeNameForm.querySelector("input");
 const noButton = popup.querySelector(".no");
+const resetProgressButton = document.querySelector(".restart-progress-button");
 
 changeNameButton.addEventListener("click", showPopup);
 newNameInput.value = playerName;
@@ -27,6 +28,8 @@ changeNameForm.addEventListener("submit", (event) => {
   event.preventDefault();
   changeName();
 });
+
+resetProgressButton.addEventListener("click", restartProgress);
 
 noButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -38,6 +41,11 @@ noButton.addEventListener("click", (event) => {
 });
 
 // Functions
+function restartProgress() {
+  localStorage.removeItem("playerName");
+  window.location.href = "../";
+}
+
 function changeName() {
   const newName = newNameInput.value;
   if (newName === playerName) {
@@ -45,8 +53,10 @@ function changeName() {
     closePopup();
     return;
   }
-  localStorage.setItem("playerName", newName);
-  playerNameSpan.textContent = newName;
+
+  playerName = newName;
+  localStorage.setItem("playerName", playerName);
+  playerNameSpan.textContent = playerName;
   showToast("Name changed successfully", "success");
   closePopup();
 }
@@ -60,6 +70,7 @@ function showPopup() {
     }, 50);
     popup.style.transform = "scale(1)";
   }, 125);
+  newNameInput.focus();
 }
 
 function closePopup() {

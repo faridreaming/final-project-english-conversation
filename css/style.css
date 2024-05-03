@@ -19,7 +19,7 @@
   --color-5-reverse: hsl(349, 100%, 65%);
   --color-5-reverse-darker: hsl(349, 75%, 55%);
   --color-6-reverse: #ff758f;
-  --basic-border-radius: 0.5rem;
+  --basic-border-radius: 0.75rem;
   --basic-font-bold: 500;
   --basic-transition: all 0.175s ease;
 }

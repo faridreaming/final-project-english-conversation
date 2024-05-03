@@ -70,7 +70,7 @@
   outline-color: var(--color-6-reverse);
 }
 
-form.change-name {
+form.popup-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;

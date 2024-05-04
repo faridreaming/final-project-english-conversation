@@ -1,55 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting Started</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/favicons/site.webmanifest" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Getting Started</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-  <link rel="manifest" href="assets/favicons/site.webmanifest">
-</head>
-
-<body>
-  <header>
-    <div class="container">
-      <a href="./" class="logo">
-        <img src="assets/logo.svg" alt="Logo">
-        <p>English Conversation Game</p>
-      </a>
-    </div>
-  </header>
-  <main>
-    <div class="container">
-      <div class="hero-wrapper">
-        <img src="assets/hero.svg" alt="Hero">
+  <body>
+    <header>
+      <div class="container">
+        <a href="./" class="logo">
+          <img src="assets/logo.svg" alt="Logo" />
+          <p>English Conversation Game</p>
+        </a>
       </div>
-      <form action="" method="POST" class="name-form">
-        <p>Enter your name before playing!</p>
-        <input type="text" name="name" placeholder="What is your name?" required spellcheck="false">
-        <button type="submit">let's start!</button>
-      </form>
-    </div>
-  </main>
-  <footer>
-    <div class="container">
-      <p>&copy; 2024 English Conversation Game by <a href="https://github.com/faridreaming/"
-          target="_blank">@faridreaming</a></p>
-    </div>
-  </footer>
-  <div class="popup-overlay">
-    <div class="popup">
-      <p>Your name is <span class="player-name-span"></span>. Are you sure?</p>
-      <div class="popup-button-wrapper">
-        <button class="yes">Yes</button>
-        <button class="no">No</button>
+    </header>
+    <main>
+      <div class="container">
+        <div class="hero-wrapper">
+          <img src="assets/hero.svg" alt="Hero" />
+        </div>
+        <form action="" method="POST" class="name-form">
+          <p>Enter your name before playing!</p>
+          <input
+            type="text"
+            name="name"
+            placeholder="What is your name?"
+            required
+            spellcheck="false"
+          />
+          <button type="submit">let's start!</button>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2024
+          <span class="footer-title">English Conversation Game</span> by
+          <a href="https://github.com/faridreaming/" target="_blank"
+            >@faridreaming</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div class="popup-overlay">
+      <div class="popup">
+        <p>
+          Your name is <span class="player-name-span"></span>. Are you sure?
+        </p>
+        <div class="popup-button-wrapper">
+          <button class="yes">Yes</button>
+          <button class="no">No</button>
+        </div>
       </div>
     </div>
-  </div>
-  <script src="js/index.js"></script>
-</body>
-
+    <script src="js/index.js"></script>
+  </body>
 </html>

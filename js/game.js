@@ -76,7 +76,7 @@ function showPopup(popUpName, message, element, buttonText) {
     <div class="popup">
       <form class="popup-form ${popUpName}">
         <p class="popup-message">${message}</p>
-        <div class="popup-element">${element}</div>
+        ${element !== "" ? `<div class="popup-element">${element}</div>` : ""}
         <div class="popup-button-wrapper">
           <button class="yes" type="submit">${buttonText[0]}</button>
           <button class="no" type="reset">${buttonText[1]}</button>
@@ -85,11 +85,6 @@ function showPopup(popUpName, message, element, buttonText) {
     </div>
   `;
   const popup = popupOverlay.querySelector(".popup");
-  // const popupForm = popup.querySelector(".popup-form");
-  // const popupMessage = popup.querySelector(".popup-message");
-  // const popupElement = popup.querySelector(".popup-element");
-  // const noButton = popup.querySelector(".no");
-  // const yesButton = popup.querySelector(".yes");
   popupOverlay.style.display = "flex";
   setTimeout(() => {
     popupOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
@@ -124,11 +119,11 @@ function toggleMenu() {
   }, 500);
   if (!menuButton.classList.contains("opened")) {
     menuButton.classList.toggle("opened");
-    menuButton.textContent = "close";
+    menuButton.src = "../assets/icons/close.svg";
     showOptions();
   } else {
     menuButton.classList.toggle("opened");
-    menuButton.textContent = "menu";
+    menuButton.src = "../assets/icons/menu.svg";
     closeOptions();
   }
 }

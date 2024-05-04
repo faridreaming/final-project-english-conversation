@@ -1,6 +1,3 @@
-let playerName = localStorage.getItem("playerName");
-if (!playerName) window.location.href = "../";
-
 // Display Player Name
 const playerNameSpan = document.querySelector(".player-name-span");
 playerNameSpan.textContent = playerName;

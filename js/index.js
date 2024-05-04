@@ -1,6 +1,3 @@
-const playerName = localStorage.getItem("playerName");
-if (playerName) window.location.href = "./game/";
-
 const nameForm = document.querySelector(".name-form");
 const popupOverlay = document.querySelector(".popup-overlay");
 const popup = popupOverlay.querySelector(".popup");

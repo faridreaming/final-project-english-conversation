@@ -1,14 +1,14 @@
 @import url(style.css);
 
-/* Header */
 .hamburger-menu-button {
   user-select: none;
   cursor: pointer;
+  filter: invert(100%);
   transition: var(--basic-transition);
 }
 
 .hamburger-menu-button:hover {
-  color: var(--color-4);
+  opacity: 75%;
 }
 
 .container.options-wrapper {
